@@ -324,10 +324,10 @@ arr.myForEach((element, index) => {
 
 // Використання myFilter
 const filteredArr = arr.myFilter(element => element > 2);
-console.log(filteredArr); // [3, 4, 5]
+console.log(filteredArr);
 
 // Використання myMap
 const mappedArr = arr.myMap(element => element * 2);
-console.log(mappedArr); // [2, 4, 6]
+console.log(mappedArr);
 
 
