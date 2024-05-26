@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="myForm">
+    <label for="name">Ім'я:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="surname">Прізвище:</label>
+    <input type="text" id="surname" name="surname"><br>
+    <label for="age">Вік:</label>
+    <input type="number" id="age" name="age"><br>
+    <button type="button" onclick="handleSubmit()">Надіслати</button>
+</form>
+<div id="result"></div>
+
+<div id="counter"></div>
+
+
+<h1>Головна сторінка</h1>
+<h1>Історія відвідувань</h1>
+<div id="sessions"></div>
+
+<div id="items"></div>
+<button onclick="prevPage()">Попередні 10</button>
+<button onclick="nextPage()">Наступні 10</button>
+
+<div id="text">Цей текст зникне при натисканні кнопки</div>
+<button onclick="hideText()">Зникнути</button>
+
+
+<label for="ageInput">Введіть свій вік:</label>
+<input type="number" id="ageInput">
+<button onclick="checkAge()">Підтвердити</button>
+<div id="ageMessage"></div>
+
+<script src="HW_10.js"></script>
+
+</body>
+</html>
