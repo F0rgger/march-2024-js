@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+</head>
+<body>
+<h1>Users List</h1>
+<ul id="users-list"></ul>
+
+<script>
+  fetch('http://jsonplaceholder.typicode.com/users')
+          .then(response => response.json())
+          .then(users => {
+            const usersList = document.getElementById('users-list');
+
+            users.forEach(user => {
+              const listItem = document.createElement('li');
+              const link = document.createElement('a');
+              link.textContent = `${user.id} - ${user.name}`;
+              link.href = `user-details.html?id=${user.id}`;
+              listItem.appendChild(link);
+              usersList.appendChild(listItem);
+            });
+          })
+          .catch(error => console.error('Error', error));
+</script>
+</body>
+</html>
