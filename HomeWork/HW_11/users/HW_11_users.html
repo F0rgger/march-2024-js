@@ -18,11 +18,11 @@
   fetch('http://jsonplaceholder.typicode.com/users')
           .then(response => response.json())
           .then(users => {
-            const usersList = document.getElementById('users-list');
+            let usersList = document.getElementById('users-list');
 
             users.forEach(user => {
-              const listItem = document.createElement('li');
-              const link = document.createElement('a');
+              let listItem = document.createElement('li');
+              let link = document.createElement('a');
               link.textContent = `${user.id} - ${user.name}`;
               link.href = `user-details.html?id=${user.id}`;
               listItem.appendChild(link);
