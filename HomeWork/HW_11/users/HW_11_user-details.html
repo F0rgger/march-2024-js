@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<h1>User Details</h1>
+<div id="user-details"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let userDetails = document.getElementById('user-details');
+        let userId = new URLSearchParams(window.location.search).get('id');
+
+        fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
+            .then(response => response.json())
+            .then(user => {
+                let detailsHTML = `
+                <p>ID: ${user.id}</p>
+                <p>Name: ${user.name}</p>
+                <p>Username: ${user.username}</p>
+                <p>Email: ${user.email}</p>
+                <p>Address: ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
+                <p>Phone: ${user.phone}</p>
+                <p>Website: ${user.website}</p>
+                <p>Company: ${user.company.name} - ${user.company.catchPhrase} - ${user.company.bs}</p>`;
+                userDetails.innerHTML = detailsHTML;
+            })
+            .catch(error => console.error('Error', error));
+    });
+</script>
+</body>
+</html>
